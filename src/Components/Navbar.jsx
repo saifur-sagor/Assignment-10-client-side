@@ -3,6 +3,10 @@ import { FaGraduationCap } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
+  const activeRoute = ({ isActive }) =>
+    isActive
+      ? "text-indigo-400 font-semibold underline underline-offset-4"
+      : "text-white hover:text-indigo-300";
   return (
     <div className="navbar bg-blue-950 shadow-md px-4">
       <div className="navbar-start">
@@ -25,16 +29,20 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow text-white !z-100 absolute"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow absolute"
           >
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/" className={activeRoute}>
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/">Courses</Link>
+              <NavLink to="/course" className={activeRoute}>
+                Courses
+              </NavLink>
             </li>
             <li>
-              <details className="text-white">
+              <details>
                 <summary>Dashboard</summary>
                 <ul className="p-2 relative z-100 ">
                   <li>
@@ -53,29 +61,39 @@ const Navbar = () => {
         </div>
         <a className="btn btn-ghost text-xl font-bold flex items-center gap-2 text-indigo-600">
           <FaGraduationCap className="text-2xl" />
-          <span>Online Learning Platform</span>
+          <span>E-Learning Platform</span>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-[16px] font-medium">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/" className={activeRoute}>
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/">Courses</Link>
+            <NavLink to="/course" className={activeRoute}>
+              Courses
+            </NavLink>
           </li>
           <li>
             <details>
-              <summary>Dashboard</summary>
+              <summary className="text-white">Dashboard</summary>
               <ul className="p-2 bg-base-100 absolute z-100">
                 <li>
-                  <Link to="/">My Enrolled Course</Link>
+                  <NavLink to="/" className={activeRoute}>
+                    My Enrolled Course
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/">Add Course</Link>
+                  <NavLink to="/" className={activeRoute}>
+                    Add Course
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/">My Course</Link>
+                  <NavLink to="/" className={activeRoute}>
+                    My Course
+                  </NavLink>
                 </li>
               </ul>
             </details>
@@ -83,9 +101,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-indigo-600 hover:bg-indigo-700 text-white px-6">
+        <Link
+          to="/register"
+          className="btn bg-indigo-600 hover:bg-indigo-700 text-white px-6"
+        >
           Login
-        </a>
+        </Link>
       </div>
     </div>
   );

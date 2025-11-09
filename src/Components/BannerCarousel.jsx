@@ -23,7 +23,7 @@ const BannerCarousel = () => {
   ];
 
   return (
-    <div className="carousel w-full h-[420px] rounded-xl overflow-hidden shadow-md relative !z-1">
+    <div className="carousel w-full h-[420px] rounded-xl overflow-hidden shadow-md relative">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
