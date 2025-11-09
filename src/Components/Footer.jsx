@@ -14,7 +14,7 @@ const Footer = () => {
           Explore courses in web development, design, marketing, <br />
           and more — anytime, anywhere, at your own pace.
         </p>
-        <p className="text-sm text-pink-700 font-medium mt-2">
+        <p className="text-sm text-blue-600 font-medium mt-2">
           LearnHub — শেখা থেমে নেই, এগিয়ে যাও নিজ গতিতে।
         </p>
       </nav>
@@ -39,25 +39,25 @@ const Footer = () => {
         <div className="flex justify-center items-center gap-3 text-2xl">
           <a
             href="#"
-            className="hover:text-pink-500 transition-colors duration-200"
+            className="hover:text-blue-500 transition-colors duration-200"
           >
             <FaFacebook />
           </a>
           <a
             href="#"
-            className="hover:text-pink-500 transition-colors duration-200"
+            className="hover:text-blue-500 transition-colors duration-200"
           >
             <IoLogoYoutube />
           </a>
           <a
             href="#"
-            className="hover:text-pink-500 transition-colors duration-200"
+            className="hover:text-blue-500 transition-colors duration-200"
           >
             <FaXTwitter />
           </a>
           <a
             href="#"
-            className="hover:text-pink-500 transition-colors duration-200"
+            className="hover:text-blue-500 transition-colors duration-200"
           >
             <FaSquareInstagram />
           </a>

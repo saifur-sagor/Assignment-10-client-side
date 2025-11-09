@@ -4,6 +4,10 @@ import MainLayout from "../MainLayout";
 import HomePage from "../Pages/HomePage";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
+import Courses from "../Pages/Courses";
+import EnrolledCourse from "../Pages/EnrolledCourse";
+import AddCourses from "../Pages/AddCourses";
+import MyCourse from "../Pages/MyCourse";
 
 const Routes = createBrowserRouter([
   {
@@ -19,9 +23,25 @@ const Routes = createBrowserRouter([
         Component: Register,
       },
       {
-        path:"/login",
-        Component:Login
-      }
+        path: "/login",
+        Component: Login,
+      },
+      {
+        path: "/courses",
+        Component: Courses,
+      },
+      {
+        path: "/enrolledCourse",
+        Component: EnrolledCourse,
+      },
+      {
+        path: "/addCourse",
+        Component: AddCourses,
+      },
+      {
+        path: "/myCourse",
+        Component: MyCourse,
+      },
     ],
   },
 ]);

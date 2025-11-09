@@ -37,7 +37,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/course" className={activeRoute}>
+              <NavLink to="/courses" className={activeRoute}>
                 Courses
               </NavLink>
             </li>
@@ -46,10 +46,10 @@ const Navbar = () => {
                 <summary>Dashboard</summary>
                 <ul className="p-2 relative z-100 ">
                   <li>
-                    <Link to="/">My Enrolled Course</Link>
+                    <Link to="/enrolledCourse">My Enrolled Course</Link>
                   </li>
                   <li>
-                    <Link to="/">Add Course</Link>
+                    <Link to="/addCourse">Add Course</Link>
                   </li>
                   <li>
                     <Link to="/">My Course</Link>
@@ -72,7 +72,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/course" className={activeRoute}>
+            <NavLink to="/courses" className={activeRoute}>
               Courses
             </NavLink>
           </li>
@@ -81,17 +81,17 @@ const Navbar = () => {
               <summary className="text-white">Dashboard</summary>
               <ul className="p-2 bg-base-100 absolute z-100">
                 <li>
-                  <NavLink to="/" className={activeRoute}>
+                  <NavLink to="/enrolledCourse" className={activeRoute}>
                     My Enrolled Course
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" className={activeRoute}>
+                  <NavLink to="/addCourse" className={activeRoute}>
                     Add Course
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" className={activeRoute}>
+                  <NavLink to="/myCourse" className={activeRoute}>
                     My Course
                   </NavLink>
                 </li>
