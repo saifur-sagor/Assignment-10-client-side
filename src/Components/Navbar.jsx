@@ -72,10 +72,10 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl font-bold flex items-center gap-2 text-indigo-600">
+        <p className="btn btn-ghost text-xl font-bold flex items-center gap-2 text-indigo-600">
           <FaGraduationCap className="text-2xl" />
-          <span>E-Learning Platform</span>
-        </a>
+          <Link to="/">E-Learning Platform</Link>
+        </p>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-[16px] font-medium">

@@ -17,6 +17,7 @@ const Routes = createBrowserRouter([
       {
         index: true,
         Component: HomePage,
+        loader: () => fetch("http://localhost:4000/course"),
       },
       {
         path: "/register",
@@ -29,6 +30,7 @@ const Routes = createBrowserRouter([
       {
         path: "/courses",
         Component: Courses,
+        loader: () => fetch("http://localhost:4000/course"),
       },
       {
         path: "/enrolledCourse",
