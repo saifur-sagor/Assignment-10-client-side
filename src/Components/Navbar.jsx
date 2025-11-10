@@ -1,12 +1,25 @@
-import React from "react";
+import React, { use } from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
+import { toast } from "react-toastify";
+import { AuthContext } from "./Provider/AuthProvider";
+import user1 from "../assets/user.png";
 
 const Navbar = () => {
   const activeRoute = ({ isActive }) =>
     isActive
       ? "text-indigo-400 font-semibold underline underline-offset-4"
       : "text-white hover:text-indigo-300";
+  const { user, logOut } = use(AuthContext);
+  const handleLogOut = () => {
+    logOut().then(() => {
+      toast.success("Successfully Logout", {
+        position: "top-center",
+        theme: "colored",
+      });
+    });
+  };
+
   return (
     <div className="navbar bg-blue-950 shadow-md px-4">
       <div className="navbar-start">
@@ -81,19 +94,13 @@ const Navbar = () => {
               <summary className="text-white">Dashboard</summary>
               <ul className="p-2 bg-base-100 absolute z-100">
                 <li>
-                  <NavLink to="/enrolledCourse" className={activeRoute}>
-                    My Enrolled Course
-                  </NavLink>
+                  <NavLink to="/enrolledCourse">My Enrolled Course</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/addCourse" className={activeRoute}>
-                    Add Course
-                  </NavLink>
+                  <NavLink to="/addCourse">Add Course</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/myCourse" className={activeRoute}>
-                    My Course
-                  </NavLink>
+                  <NavLink to="/myCourse">My Course</NavLink>
                 </li>
               </ul>
             </details>
@@ -101,12 +108,29 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link
-          to="/register"
-          className="btn bg-indigo-600 hover:bg-indigo-700 text-white px-6"
-        >
-          Login
-        </Link>
+        <img
+          className="w-10 rounded-full mr-4"
+          src={user?.photoURL || user1}
+          alt=""
+          title={user?.displayName || "Guest User"}
+          referrerPolicy="no-referrer"
+        />
+        {user ? (
+          <button
+            onClick={handleLogOut}
+            className="btn bg-indigo-600 hover:bg-indigo-700 text-white px-6"
+          >
+            {" "}
+            Log-Out
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            className="btn bg-indigo-600 hover:bg-indigo-700 text-white px-6"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
