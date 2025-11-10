@@ -30,7 +30,7 @@ const Routes = createBrowserRouter([
       {
         path: "/courses",
         Component: Courses,
-        loader: () => fetch("http://localhost:4000/course"),
+        loader: () => fetch("http://localhost:4000/courses"),
       },
       {
         path: "/enrolledCourse",
