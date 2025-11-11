@@ -10,7 +10,7 @@ const Navbar = () => {
     isActive
       ? "text-indigo-400 font-semibold underline underline-offset-4"
       : "text-white hover:text-indigo-300";
-  const { user, logOut } = use(AuthContext);
+  const { user, logOut, darkMode, toggleTheme } = use(AuthContext);
   const handleLogOut = () => {
     logOut().then(() => {
       toast.success("Successfully Logout", {
@@ -45,14 +45,10 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow absolute"
           >
             <li>
-              <NavLink to="/" className={activeRoute}>
-                Home
-              </NavLink>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="/courses" className={activeRoute}>
-                Courses
-              </NavLink>
+              <NavLink to="/courses">Courses</NavLink>
             </li>
             <li>
               <details>
@@ -108,6 +104,11 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        <div>
+          <button onClick={toggleTheme} className="px-4 py-2 text-white">
+            {darkMode ? "Light" : "Dark"}
+          </button>
+        </div>
         <img
           className="w-10 rounded-full mr-4"
           src={user?.photoURL || user1}

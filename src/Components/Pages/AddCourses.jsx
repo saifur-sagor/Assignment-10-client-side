@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const AddCourses = () => {
   const { user } = use(AuthContext);
@@ -17,6 +18,7 @@ const AddCourses = () => {
       instructor: {
         name: user?.displayName,
         email: user?.email,
+        photo: user?.photoURL,
       },
     };
     console.log(courseData);
@@ -29,7 +31,8 @@ const AddCourses = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("after added course", data);
+        console.log(data);
+        toast.success("Successfully added your course");
       });
   };
 
