@@ -8,6 +8,7 @@ import Courses from "../Pages/Courses";
 import EnrolledCourse from "../Pages/EnrolledCourse";
 import AddCourses from "../Pages/AddCourses";
 import MyCourse from "../Pages/MyCourse";
+import CourseDetails from "../Pages/CourseDetails";
 
 const Routes = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const Routes = createBrowserRouter([
       {
         path: "/myCourse",
         Component: MyCourse,
+      },
+      {
+        path: "/courses/:id",
+        Component: CourseDetails,
       },
     ],
   },
