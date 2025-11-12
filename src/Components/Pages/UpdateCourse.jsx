@@ -9,7 +9,9 @@ const UpdateCourse = () => {
 
   //   existing data
   useEffect(() => {
-    fetch(`http://localhost:4000/courses/${id}`)
+    fetch(
+      `https://online-learning-platform-server-tau.vercel.app/courses/${id}`
+    )
       .then((res) => res.json())
       .then((data) => setCourse(data));
   }, [id]);
@@ -27,11 +29,14 @@ const UpdateCourse = () => {
       description: form.description.value,
     };
 
-    fetch(`http://localhost:4000/myCourse/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedCourse),
-    })
+    fetch(
+      `https://online-learning-platform-server-tau.vercel.app/myCourse/${id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedCourse),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {

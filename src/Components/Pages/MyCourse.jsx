@@ -8,7 +8,9 @@ const MyCourse = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:4000/myCourse?email=${user.email}`)
+      fetch(
+        `https://online-learning-platform-server-tau.vercel.app/myCourse?email=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setCourses(data);
@@ -27,9 +29,12 @@ const MyCourse = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/myCourse/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://online-learning-platform-server-tau.vercel.app/myCourse/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {

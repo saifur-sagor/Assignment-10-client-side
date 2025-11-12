@@ -10,16 +10,22 @@ import AddCourses from "../Pages/AddCourses";
 import MyCourse from "../Pages/MyCourse";
 import CourseDetails from "../Pages/CourseDetails";
 import UpdateCourse from "../Pages/UpdateCourse";
+import NotFound from "../NotFound";
+import PrivateRoutes from "./PrivateRoutes";
 
 const Routes = createBrowserRouter([
   {
     path: "/",
     Component: MainLayout,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         index: true,
         Component: HomePage,
-        loader: () => fetch("http://localhost:4000/course"),
+        loader: () =>
+          fetch(
+            "https://online-learning-platform-server-tau.vercel.app/course"
+          ),
       },
       {
         path: "/register",
@@ -32,13 +38,18 @@ const Routes = createBrowserRouter([
       {
         path: "/courses",
         Component: Courses,
-        loader: () => fetch("http://localhost:4000/courses"),
+        loader: () =>
+          fetch(
+            "https://online-learning-platform-server-tau.vercel.app/courses"
+          ),
       },
       {
         path: "/enrolledCourse",
         Component: EnrolledCourse,
-         loader: () => fetch("http://localhost:4000/myEnroll"),
-
+        loader: () =>
+          fetch(
+            "https://online-learning-platform-server-tau.vercel.app/myEnroll"
+          ),
       },
       {
         path: "/addCourse",
@@ -50,7 +61,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/courses/:id",
-        Component: CourseDetails,
+        element: (
+          <PrivateRoutes>
+            <CourseDetails></CourseDetails>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/updateCourse/:id",

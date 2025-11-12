@@ -20,7 +20,7 @@ const AddCourses = () => {
         photo: user?.photoURL,
       },
     };
-    fetch("http://localhost:4000/course", {
+    fetch("https://online-learning-platform-server-tau.vercel.app/course", {
       method: "POST",
       headers: {
         "content-type": "application/json",

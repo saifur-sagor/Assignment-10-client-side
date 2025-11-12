@@ -9,7 +9,9 @@ const CourseDetails = () => {
   const [course, setCourse] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/courses/${id}`)
+    fetch(
+      `https://online-learning-platform-server-tau.vercel.app/courses/${id}`
+    )
       .then((res) => res.json())
       .then((data) => setCourse(data));
   }, [id]);
@@ -32,7 +34,7 @@ const CourseDetails = () => {
       instructor: course.instructor,
     };
 
-    fetch("http://localhost:4000/enroll", {
+    fetch("https://online-learning-platform-server-tau.vercel.app/enroll", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(enrollmentData),
