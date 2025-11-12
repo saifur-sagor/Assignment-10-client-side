@@ -5,8 +5,8 @@ const CourseCard = ({ course }) => {
   const { _id, image, title, description, price, instructor } = course;
 
   return (
-    <div className="bg-white shadow-md hover:shadow-xl transition duration-300 rounded-lg overflow-hidden border border-gray-200">
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
+    <div className="bg-white shadow-md hover:shadow-xl transition duration-300 rounded-lg overflow-hidden border border-gray-200 ">
+      <img src={image} alt={title} className="w-full h-48 object-cover p-4" />
 
       <div className="p-4">
         <h3 className="text-xl font-semibold text-gray-800 mb-1">{title}</h3>

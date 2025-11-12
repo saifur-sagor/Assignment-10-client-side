@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const CourseDetails = () => {
+  const { user } = use(AuthContext);
   const { id } = useParams();
   const [course, setCourse] = useState(null);
 
@@ -13,9 +16,38 @@ const CourseDetails = () => {
   if (!course) {
     return <p className="text-center text-lg py-10">Loading...</p>;
   }
-
   const { image, title, price, duration, category, description, instructor } =
     course;
+  const handleEnroll = () => {
+    if (!user) {
+      return Swal.fire("Please login first!");
+    }
+
+    const enrollmentData = {
+      title: course.title,
+      image: course.image,
+      price: course.price,
+      duration: course.duration,
+      category: course.category,
+      instructor: course.instructor,
+    };
+
+    fetch("http://localhost:4000/enroll", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(enrollmentData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Course Enrolled Successfully!",
+            icon: "success",
+          });
+        }
+      });
+  };
 
   return (
     <div className="max-w-5xl mx-auto mt-10 bg-white shadow-lg rounded-lg p-6 grid md:grid-cols-2 gap-6">
@@ -53,7 +85,10 @@ const CourseDetails = () => {
           </div>
         </div>
 
-        <button className="btn mt-6 bg-indigo-600 hover:bg-indigo-700 text-white border-none w-full">
+        <button
+          onClick={handleEnroll}
+          className="btn mt-6 bg-indigo-600 hover:bg-indigo-700 text-white border-none w-full"
+        >
           Enroll Now
         </button>
       </div>

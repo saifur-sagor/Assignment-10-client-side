@@ -7,7 +7,6 @@ import Home from "../Home";
 
 const HomePage = () => {
   const courses = useLoaderData();
-  console.log(courses);
   return (
     <>
       <BannerCarousel></BannerCarousel>

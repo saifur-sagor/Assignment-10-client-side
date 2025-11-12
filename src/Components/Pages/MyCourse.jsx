@@ -27,7 +27,6 @@ const MyCourse = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log("now delete");
         fetch(`http://localhost:4000/myCourse/${_id}`, {
           method: "DELETE",
         })

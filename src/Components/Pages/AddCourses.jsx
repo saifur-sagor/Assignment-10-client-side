@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 
 const AddCourses = () => {
   const { user } = use(AuthContext);
-  console.log(user);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -21,7 +20,6 @@ const AddCourses = () => {
         photo: user?.photoURL,
       },
     };
-    console.log(courseData);
     fetch("http://localhost:4000/course", {
       method: "POST",
       headers: {

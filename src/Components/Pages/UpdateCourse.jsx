@@ -34,7 +34,6 @@ const UpdateCourse = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("PUT result", data);
         if (data.modifiedCount) {
           Swal.fire({
             title: "Updated!",
