@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router";
 
 const MyCourse = () => {
   const { user } = use(AuthContext);
@@ -98,7 +99,12 @@ const MyCourse = () => {
                     </button>
                   </th>
                   <th>
-                    <button className="btn btn-ghost btn-xs">Update</button>
+                    <Link
+                      to={`/updateCourse/${course._id}`}
+                      className="btn btn-ghost btn-xs"
+                    >
+                      Update
+                    </Link>
                   </th>
                 </tr>
               ))}

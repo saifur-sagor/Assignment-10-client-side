@@ -68,7 +68,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <p className="btn btn-ghost text-xl font-bold flex items-center gap-2 text-indigo-600">
+        <p className=" text-xl font-bold flex items-center gap-2 text-indigo-600">
           <FaGraduationCap className="text-2xl" />
           <Link to="/">E-Learning Platform</Link>
         </p>
