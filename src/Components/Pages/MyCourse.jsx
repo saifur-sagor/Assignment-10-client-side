@@ -53,7 +53,7 @@ const MyCourse = () => {
     });
   };
   return (
-    <div>
+    <div className="min-h-screen">
       <h1 className="text-2xl text-indigo-500 text-center ">
         My Courses :{courses.length}
       </h1>
@@ -62,7 +62,7 @@ const MyCourse = () => {
           <table className="table">
             {/* head */}
             <thead>
-              <tr>
+              <tr className="text-blue-500">
                 <th>SL</th>
                 <th>Instructor Name</th>
                 <th>Course title</th>

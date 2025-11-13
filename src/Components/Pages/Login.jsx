@@ -46,7 +46,7 @@ const Login = () => {
   return (
     <div className="flex justify-center items-center my-10 ">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <div className="card-body bg-gradient-to-br from-pink-400 via-amber-300 to-black">
+        <div className="card-body bg-gradient-to-br from-blue-700 via-pink-300 to-blue-950">
           <h1 className="text-2xl font-bold text-center">Login Your Account</h1>
           <form onSubmit={handleLogin}>
             <fieldset className="fieldset">

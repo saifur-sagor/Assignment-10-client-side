@@ -52,7 +52,7 @@ const CourseDetails = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto mt-10 bg-white shadow-lg rounded-lg p-6 grid md:grid-cols-2 gap-6">
+    <div className="max-w-5xl mx-auto my-10 dark:bg-black bg-white shadow-lg rounded-lg p-6 grid md:grid-cols-2 gap-6">
       <div>
         <img
           src={image}
@@ -63,10 +63,10 @@ const CourseDetails = () => {
 
       <div>
         <h2 className="text-3xl font-bold text-indigo-700 mb-2">{title}</h2>
-        <p className="text-gray-600 mb-3">{description}</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-3">{description}</p>
 
         <p>
-          <span className="font-semibold">Duration:</span> {duration}
+          <span className="font-semibold ">Duration:</span> {duration}
         </p>
         <p>
           <span className="font-semibold">Category:</span> {category}

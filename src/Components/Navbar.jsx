@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { FaGraduationCap } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 import { toast } from "react-toastify";
@@ -10,7 +10,17 @@ const Navbar = () => {
     isActive
       ? "text-indigo-400 font-semibold underline underline-offset-4"
       : "text-white hover:text-indigo-300";
-  const { user, logOut, darkMode, toggleTheme } = use(AuthContext);
+  const { user, logOut } = use(AuthContext);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark" : "light");
+  };
+
   const handleLogOut = () => {
     logOut().then(() => {
       toast.success("Successfully Logout", {
@@ -61,7 +71,7 @@ const Navbar = () => {
                     <Link to="/addCourse">Add Course</Link>
                   </li>
                   <li>
-                    <Link to="/">My Course</Link>
+                    <Link to="/myCourse">My added Course</Link>
                   </li>
                 </ul>
               </details>
@@ -104,10 +114,13 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <div>
-          <button onClick={toggleTheme} className="px-4 py-2 text-white">
-            {darkMode ? "Light" : "Dark"}
-          </button>
+        <div className="text-white">
+          <input
+            onChange={(e) => handleTheme(e.target.checked)}
+            type="checkbox"
+            defaultChecked={localStorage.getItem("theme") === "dark"}
+            className="toggle bg-white mr-2"
+          />
         </div>
         <img
           className="w-10 rounded-full mr-4"

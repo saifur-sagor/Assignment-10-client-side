@@ -45,7 +45,12 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/enrolledCourse",
-        Component: EnrolledCourse,
+        element: (
+          <PrivateRoutes>
+            <EnrolledCourse></EnrolledCourse>
+          </PrivateRoutes>
+        ),
+
         loader: () =>
           fetch(
             "https://online-learning-platform-server-tau.vercel.app/myEnroll"
@@ -53,11 +58,19 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/addCourse",
-        Component: AddCourses,
+        element: (
+          <PrivateRoutes>
+            <AddCourses></AddCourses>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/myCourse",
-        Component: MyCourse,
+        element: (
+          <PrivateRoutes>
+            <MyCourse></MyCourse>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/courses/:id",

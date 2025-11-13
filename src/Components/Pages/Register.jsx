@@ -52,7 +52,10 @@ const Register = () => {
   return (
     <div className="flex justify-center items-center min-h-screen ">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <div className="card-body bg-gradient-to-br from-pink-400 via-amber-300 to-black">
+        <div
+          className="card-body bg-gradient-to-br from-blue-700 via-pink-300 to-blue-950
+"
+        >
           <h1 className="text-2xl font-bold text-center">
             Register Your Account
           </h1>

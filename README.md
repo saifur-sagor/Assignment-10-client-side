@@ -1,16 +1,53 @@
-# React + Vite
+# 🎓 Project Name: LearnHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Overview
 
-Currently, two official plugins are available:
+This project is a **LearnHub** where users can explore, enroll, and manage courses.  
+Instructors can add, update, and delete courses, while learners can browse courses, view details, and enroll.  
+The platform emphasizes **smooth interaction, intuitive UI, and efficient data management**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🧰 Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ⚛️ React.js (Frontend)
+- 🖥️ Vite (Frontend bundler)
+- 💾 MongoDB (Database)
+- 🚀 Express.js & Node.js (Backend)
+- 🎨 Tailwind CSS (Styling)
+- 🔥 React Toastify (Notifications)
+- ✨ Framer Motion & AOS (Animations)
+- 🗄️ LocalStorage (User session / optional)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Features
+
+✅ User Authentication (Email/Password + Google)  
+✅ Private Routes for Dashboard and Course Management  
+✅ Add, Update, Delete, and View Courses (CRUD)  
+✅ Filter courses by category  
+✅ View course details with instructor info  
+✅ Enroll in courses and manage enrolled courses  
+✅ Responsive design for mobile, tablet, and desktop  
+✅ Animated home page sections using Framer Motion / AOS  
+✅ Toast notifications for success/error messages
+
+---
+
+## 🛠️ Pages & Functionalities
+
+- **Home Page:** Hero section, Popular Courses, Why Choose Us, Top Instructors
+- **Courses Page:** Display all courses
+- **Course Details:** Full course info with “Enroll Now” button
+- **Add Course:** Form to add new courses (pre-filled instructor info)
+- **My Courses:** List of courses added by the logged-in user with Update/Delete options
+- **Update Course:** Edit existing course details
+- **My Enrolled Courses:** Display courses enrolled by the user
+
+---
+
+## 🌐 Deployment
+
+- Frontend: Netlify
+- Backend: Vercel Hosting

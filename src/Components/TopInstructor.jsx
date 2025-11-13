@@ -62,7 +62,7 @@ const TopInstructor = () => {
             </div>
             <div className="card-body">
               <div className="flex justify-between items-center">
-                <h2 className="card-title text-lg font-semibold text-gray-800">
+                <h2 className="card-title text-lg font-semibold text-gray-800 dark:text-indigo-600">
                   {ins.name}
                 </h2>
                 <div className="flex items-center gap-1 text-yellow-400">
@@ -75,7 +75,9 @@ const TopInstructor = () => {
               <p className="text-indigo-600 text-sm font-medium mb-2">
                 {ins.sector}
               </p>
-              <p className="text-gray-600 text-sm leading-relaxed">{ins.bio}</p>
+              <p className="text-gray-600 text-sm leading-relaxed dark:text-white">
+                {ins.bio}
+              </p>
               <div className="card-actions justify-between mt-4">
                 <button className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 text-white">
                   View Courses
