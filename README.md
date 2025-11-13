@@ -16,8 +16,7 @@ The platform emphasizes **smooth interaction, intuitive UI, and efficient data m
 - 🚀 Express.js & Node.js (Backend)
 - 🎨 Tailwind CSS (Styling)
 - 🔥 React Toastify (Notifications)
-- ✨ Framer Motion & AOS (Animations)
-- 🗄️ LocalStorage (User session / optional)
+- ✨ AOS (Animations)
 
 ---
 
@@ -26,11 +25,10 @@ The platform emphasizes **smooth interaction, intuitive UI, and efficient data m
 ✅ User Authentication (Email/Password + Google)  
 ✅ Private Routes for Dashboard and Course Management  
 ✅ Add, Update, Delete, and View Courses (CRUD)  
-✅ Filter courses by category  
 ✅ View course details with instructor info  
 ✅ Enroll in courses and manage enrolled courses  
 ✅ Responsive design for mobile, tablet, and desktop  
-✅ Animated home page sections using Framer Motion / AOS  
+✅ Animated all pages AOS  
 ✅ Toast notifications for success/error messages
 
 ---
