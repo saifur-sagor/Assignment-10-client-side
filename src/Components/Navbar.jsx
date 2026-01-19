@@ -61,6 +61,9 @@ const Navbar = () => {
               <NavLink to="/courses">Courses</NavLink>
             </li>
             <li>
+              <NavLink to="/blog">Blog</NavLink>
+            </li>
+            <li>
               <details>
                 <summary>Dashboard</summary>
                 <ul className="p-2 relative z-100 ">
@@ -93,6 +96,11 @@ const Navbar = () => {
           <li>
             <NavLink to="/courses" className={activeRoute}>
               Courses
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/blog" className={activeRoute}>
+              Blog
             </NavLink>
           </li>
           <li>

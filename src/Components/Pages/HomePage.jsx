@@ -7,6 +7,7 @@ import { useLoaderData } from "react-router";
 import StatsSection from "../StatsSection";
 import Testimonial from "../Testimonial";
 import FAQSection from "./FAQSection";
+import Newsletter from "./Newsletter";
 
 const HomePage = () => {
   const courses = useLoaderData();
@@ -15,10 +16,11 @@ const HomePage = () => {
       <BannerCarousel></BannerCarousel>
       <Home courses={courses}></Home>
       <StatsSection></StatsSection>
+      <WhyChoseUs></WhyChoseUs>
       <TopInstructor></TopInstructor>
       <Testimonial></Testimonial>
-      <WhyChoseUs></WhyChoseUs>
       <FAQSection></FAQSection>
+      <Newsletter></Newsletter>
     </>
   );
 };

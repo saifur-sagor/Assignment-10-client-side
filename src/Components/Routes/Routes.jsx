@@ -13,6 +13,7 @@ import UpdateCourse from "../Pages/UpdateCourse";
 import NotFound from "../NotFound";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Dashboard";
+import Blog from "../Pages/Blog";
 
 const Routes = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const Routes = createBrowserRouter([
           fetch(
             "https://online-learning-platform-server-tau.vercel.app/courses",
           ),
+      },
+      {
+        path: "/blog",
+        Component: Blog,
       },
       // {
       //   path: "/enrolledCourse",
