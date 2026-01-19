@@ -12,6 +12,7 @@ import CourseDetails from "../Pages/CourseDetails";
 import UpdateCourse from "../Pages/UpdateCourse";
 import NotFound from "../NotFound";
 import PrivateRoutes from "./PrivateRoutes";
+import Dashboard from "../Dashboard";
 
 const Routes = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const Routes = createBrowserRouter([
         Component: HomePage,
         loader: () =>
           fetch(
-            "https://online-learning-platform-server-tau.vercel.app/course"
+            "https://online-learning-platform-server-tau.vercel.app/course",
           ),
       },
       {
@@ -40,22 +41,22 @@ const Routes = createBrowserRouter([
         Component: Courses,
         loader: () =>
           fetch(
-            "https://online-learning-platform-server-tau.vercel.app/courses"
+            "https://online-learning-platform-server-tau.vercel.app/courses",
           ),
       },
-      {
-        path: "/enrolledCourse",
-        element: (
-          <PrivateRoutes>
-            <EnrolledCourse></EnrolledCourse>
-          </PrivateRoutes>
-        ),
+      // {
+      //   path: "/enrolledCourse",
+      //   element: (
+      //     <PrivateRoutes>
+      //       <EnrolledCourse></EnrolledCourse>
+      //     </PrivateRoutes>
+      //   ),
 
-        loader: () =>
-          fetch(
-            "https://online-learning-platform-server-tau.vercel.app/myEnroll"
-          ),
-      },
+      //   loader: () =>
+      //     fetch(
+      //       "https://online-learning-platform-server-tau.vercel.app/myEnroll",
+      //     ),
+      // },
       {
         path: "/addCourse",
         element: (
@@ -83,6 +84,25 @@ const Routes = createBrowserRouter([
       {
         path: "/updateCourse/:id",
         Component: UpdateCourse,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    Component: Dashboard,
+    children: [
+      {
+        path: "enrolledCourse",
+        element: (
+          <PrivateRoutes>
+            <EnrolledCourse></EnrolledCourse>
+          </PrivateRoutes>
+        ),
+
+        loader: () =>
+          fetch(
+            "https://online-learning-platform-server-tau.vercel.app/myEnroll",
+          ),
       },
     ],
   },

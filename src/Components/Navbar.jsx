@@ -111,6 +111,11 @@ const Navbar = () => {
               </ul>
             </details>
           </li>
+          {user && (
+            <li>
+              <NavLink to="/dashboard">Dashboard</NavLink>
+            </li>
+          )}
         </ul>
       </div>
       <div className="navbar-end">

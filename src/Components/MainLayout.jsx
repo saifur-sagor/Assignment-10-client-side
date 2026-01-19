@@ -18,13 +18,15 @@ const MainLayout = () => {
     }, 300);
   }, [location]);
   return (
-    <Container>
+    <>
       <Navbar></Navbar>
-      <div key={location.pathname} data-aos="fade-down">
-        <Outlet></Outlet>
-      </div>
-      <Footer></Footer>
-    </Container>
+      <Container>
+        <div key={location.pathname} data-aos="fade-down">
+          <Outlet></Outlet>
+        </div>
+        <Footer></Footer>
+      </Container>
+    </>
   );
 };
 
