@@ -5,6 +5,8 @@ import WhyChoseUs from "../WhyChoseUs";
 import Home from "../Home";
 import { useLoaderData } from "react-router";
 import StatsSection from "../StatsSection";
+import Testimonial from "../Testimonial";
+import FAQSection from "./FAQSection";
 
 const HomePage = () => {
   const courses = useLoaderData();
@@ -14,7 +16,9 @@ const HomePage = () => {
       <Home courses={courses}></Home>
       <StatsSection></StatsSection>
       <TopInstructor></TopInstructor>
+      <Testimonial></Testimonial>
       <WhyChoseUs></WhyChoseUs>
+      <FAQSection></FAQSection>
     </>
   );
 };
