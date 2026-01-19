@@ -14,6 +14,7 @@ import NotFound from "../NotFound";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Dashboard";
 import Blog from "../Pages/Blog";
+import AboutUs from "../Pages/AboutUs";
 
 const Routes = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const Routes = createBrowserRouter([
       {
         path: "/blog",
         Component: Blog,
+      },
+      {
+        path: "/about",
+        Component: AboutUs,
       },
       // {
       //   path: "/enrolledCourse",
