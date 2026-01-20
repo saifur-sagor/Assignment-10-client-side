@@ -26,6 +26,9 @@ const StatsSection = () => {
   ];
   return (
     <section className="py-16 px-4">
+      <h1 className="text-6xl font-bold text-center uppercase my-8">
+        Our <span className="text-blue-600">Statistics</span>
+      </h1>
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
         {stats.map((item, index) => (
           <motion.div

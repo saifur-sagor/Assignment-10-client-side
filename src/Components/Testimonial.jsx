@@ -11,7 +11,7 @@ const Testimonial = () => {
 <section className="py-20 bg-slate-50 dark:bg-slate-900/50 transition-colors">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h4 className="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase text-sm">Testimonials</h4>
+          <h4 className=" dark:text-indigo-400 font-bold tracking-widest uppercase text-6xl my-8">Testi<span className='text-indigo-600'>monials</span></h4>
           <h2 className="text-4xl font-extrabold text-slate-800 dark:text-white mt-2">What Our Students Say</h2>
         </div>
         

@@ -35,8 +35,8 @@ const TopInstructor = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 py-12">
       <div className="text-center mb-10">
-        <h3 className="text-indigo-500 font-semibold uppercase">
-          Top Instructors
+        <h3 className="text-6xl my-8 font-bold uppercase">
+          Top <span className="text-indigo-500">Instructors</span>
         </h3>
         <h2 className="text-3xl md:text-4xl font-bold mb-2">
           Meet Our Expert Instructors

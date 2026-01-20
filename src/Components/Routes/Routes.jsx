@@ -16,6 +16,7 @@ import Dashboard from "../Dashboard";
 import Blog from "../Pages/Blog";
 import AboutUs from "../Pages/AboutUs";
 import DashboardHome from "../DashboardHome";
+import Profile from "../Profile";
 
 const Routes = createBrowserRouter([
   {
@@ -105,6 +106,10 @@ const Routes = createBrowserRouter([
             <MyCourse></MyCourse>
           </PrivateRoutes>
         ),
+      },
+      {
+        path: "profile",
+        Component: Profile,
       },
     ],
   },

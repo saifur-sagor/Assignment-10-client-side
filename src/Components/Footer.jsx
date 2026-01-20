@@ -1,7 +1,7 @@
 import React from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FaSquareInstagram, FaXTwitter } from "react-icons/fa6";
-import { IoLogoYoutube } from "react-icons/io";
+import { IoLogoLinkedin, IoLogoYoutube } from "react-icons/io";
 
 const Footer = () => {
   return (
@@ -39,16 +39,16 @@ const Footer = () => {
           <h6>Social Links</h6>
           <div className="flex justify-center items-center gap-3 text-2xl">
             <a
-              href="#"
+              href="https://www.facebook.com/saifurrahman.sagor.1"
               className="hover:text-blue-500 transition-colors duration-200"
             >
               <FaFacebook />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/md-saifur-rahman-sagor"
               className="hover:text-blue-500 transition-colors duration-200"
             >
-              <IoLogoYoutube />
+              <IoLogoLinkedin />
             </a>
             <a
               href="#"
