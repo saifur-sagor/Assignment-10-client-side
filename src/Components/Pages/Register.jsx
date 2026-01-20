@@ -37,7 +37,7 @@ const Register = () => {
         });
         updateUser({ displayName: name, photoURL: photo }).then(() => {
           setUser({ ...user, displayName: name, photoURL: photo });
-          navigate("/");
+          navigate(`${location.state ? location.state : "/"}`);
         });
       })
       .catch((error) => {
