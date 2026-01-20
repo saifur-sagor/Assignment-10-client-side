@@ -66,22 +66,6 @@ const Navbar = () => {
             <li>
               <NavLink to="/about">About Us</NavLink>
             </li>
-            <li>
-              <details>
-                <summary>Dashboard</summary>
-                <ul className="p-2 relative z-100 ">
-                  <li>
-                    <Link to="/enrolledCourse">My Enrolled Course</Link>
-                  </li>
-                  <li>
-                    <Link to="/addCourse">Add Course</Link>
-                  </li>
-                  <li>
-                    <Link to="/myCourse">My added Course</Link>
-                  </li>
-                </ul>
-              </details>
-            </li>
           </ul>
         </div>
         <p className=" text-xl font-bold flex items-center gap-2 text-indigo-600">
@@ -111,25 +95,11 @@ const Navbar = () => {
               About Us
             </NavLink>
           </li>
-          <li>
-            <details>
-              <summary className="text-white">Dashboard</summary>
-              <ul className="p-2 bg-base-100 absolute z-100">
-                <li>
-                  <NavLink to="/enrolledCourse">My Enrolled Course</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/addCourse">Add Course</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/myCourse">My Course</NavLink>
-                </li>
-              </ul>
-            </details>
-          </li>
           {user && (
             <li>
-              <NavLink to="/dashboard">Dashboard</NavLink>
+              <NavLink to="/dashboard" className={activeRoute}>
+                Dashboard
+              </NavLink>
             </li>
           )}
         </ul>

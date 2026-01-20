@@ -1,108 +1,118 @@
-import React from "react";
-import { FaGraduationCap } from "react-icons/fa";
+import React, { use } from "react";
+import {
+  FaGraduationCap,
+  FaBookOpen,
+  FaPlus,
+  FaListUl,
+  FaUserCircle,
+} from "react-icons/fa";
+import { IoHomeSharp, IoSettingsOutline } from "react-icons/io5";
 import { Link, Outlet } from "react-router";
+import { AuthContext } from "./Provider/AuthProvider";
+import user1 from "../assets/user.png";
 
 const Dashboard = () => {
+  const { user } = use(AuthContext);
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content">
-        {/* Navbar */}
-        <nav className="navbar w-full bg-blue-950">
+      <div className="drawer-content flex flex-col">
+        {/* Top Navbar */}
+        <nav className="navbar w-full bg-blue-950 px-4 flex justify-between lg:justify-end">
           <label
             htmlFor="my-drawer-4"
-            aria-label="open sidebar"
-            className="btn btn-square btn-primary"
+            className="btn btn-square btn-ghost lg:hidden text-white"
           >
-            {/* Sidebar toggle icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth="2"
               fill="none"
-              stroke="currentColor"
-              className="my-1.5 inline-block size-4"
+              viewBox="0 0 24 24"
+              className="inline-block w-6 h-6 stroke-current"
             >
-              <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
-              <path d="M9 4v16"></path>
-              <path d="M14 10l2 2l-2 2"></path>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
             </svg>
           </label>
-          <div className="px-4">
-            <p className=" text-xl font-bold flex items-center gap-2 text-indigo-600">
-              <FaGraduationCap className="text-2xl" />
-              <Link to="/">LearnHub </Link>
-            </p>
+          <div className="flex items-center gap-4">
+            <h2 className="text-white hidden md:block">Welcome</h2>
+            <img
+              className="w-10 rounded-full mr-4"
+              src={user?.photoURL || user1}
+              alt=""
+              title={user?.displayName || "Guest User"}
+              referrerPolicy="no-referrer"
+            />
           </div>
         </nav>
-        {/* Page content here */}
-        <div className="p-4">
-          <Outlet></Outlet>
+
+        {/* Page Content */}
+        <div className="p-6 bg-slate-50 min-h-screen">
+          <Outlet />
         </div>
       </div>
 
-      <div className="drawer-side is-drawer-close:overflow-visible">
-        <label
-          htmlFor="my-drawer-4"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label>
-        <div className="flex min-h-full flex-col items-start bg-blue-950 is-drawer-close:w-14 is-drawer-open:w-64">
-          {/* Sidebar content here */}
-          <ul className="menu w-full grow">
-            {/* List item */}
-            <li>
-              <button
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-                data-tip="Homepage"
-              >
-                {/* Home icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                  strokeWidth="2"
-                  fill="none"
-                  stroke="currentColor"
-                  className="my-1.5 inline-block size-4 text-white"
-                >
-                  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
-                  <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                </svg>
-                <span className="is-drawer-close:hidden">Homepage</span>
-              </button>
-            </li>
+      <div className="drawer-side">
+        <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
+        <div className="p-4 w-64 min-h-full bg-blue-950 text-white">
+          {/* Dashboard Logo */}
+          <div className="flex items-center gap-2 px-4 py-6 border-b border-blue-900 mb-6">
+            <FaGraduationCap className="text-3xl text-indigo-400" />
+            <span className="text-2xl font-bold tracking-tight">LearnHub</span>
+          </div>
 
-            {/* List item */}
+          <ul className="menu space-y-2">
             <li>
-              <Link to="enrolledCourse">My Enrolled course</Link>
+              <Link
+                to="/"
+                className="flex items-center gap-3 hover:bg-blue-900 py-3"
+              >
+                <IoHomeSharp className="text-xl" /> Homepage
+              </Link>
             </li>
             <li>
-              <button
-                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-                data-tip="Settings"
+              <Link
+                to="/dashboard/enrolledCourse"
+                className="flex items-center gap-3 hover:bg-blue-900 py-3"
               >
-                {/* Settings icon */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                  strokeWidth="2"
-                  fill="none"
-                  stroke="currentColor"
-                  className="my-1.5 inline-block size-4 text-white"
-                >
-                  <path d="M20 7h-9"></path>
-                  <path d="M14 17H5"></path>
-                  <circle cx="17" cy="17" r="3"></circle>
-                  <circle cx="7" cy="7" r="3"></circle>
-                </svg>
-                <span className="is-drawer-close:hidden">Settings</span>
-              </button>
+                <FaBookOpen className="text-xl" /> Enrolled Course
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboard/addCourse"
+                className="flex items-center gap-3 hover:bg-blue-900 py-3"
+              >
+                <FaPlus className="text-xl" /> Add Course
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboard/myCourse"
+                className="flex items-center gap-3 hover:bg-blue-900 py-3"
+              >
+                <FaListUl className="text-xl" /> My Course
+              </Link>
+            </li>
+            <div className="divider border-blue-900"></div>
+            <li>
+              <Link
+                to="/dashboard/profile"
+                className="flex items-center gap-3 hover:bg-blue-900 py-3"
+              >
+                <FaUserCircle className="text-xl" /> Profile
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboard/settings"
+                className="flex items-center gap-3 hover:bg-blue-900 py-3"
+              >
+                <IoSettingsOutline className="text-xl" /> Settings
+              </Link>
             </li>
           </ul>
         </div>

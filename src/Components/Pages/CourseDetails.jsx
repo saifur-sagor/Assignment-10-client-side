@@ -10,7 +10,7 @@ const CourseDetails = () => {
 
   useEffect(() => {
     fetch(
-      `https://online-learning-platform-server-tau.vercel.app/courses/${id}`
+      `https://online-learning-platform-server-tau.vercel.app/courses/${id}`,
     )
       .then((res) => res.json())
       .then((data) => setCourse(data));
@@ -32,6 +32,9 @@ const CourseDetails = () => {
       duration: course.duration,
       category: course.category,
       instructor: course.instructor,
+      // user
+      userEmail: user.email,
+      userName: user.displayName,
     };
 
     fetch("https://online-learning-platform-server-tau.vercel.app/enroll", {

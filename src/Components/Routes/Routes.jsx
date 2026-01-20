@@ -15,6 +15,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Dashboard";
 import Blog from "../Pages/Blog";
 import AboutUs from "../Pages/AboutUs";
+import DashboardHome from "../DashboardHome";
 
 const Routes = createBrowserRouter([
   {
@@ -54,35 +55,6 @@ const Routes = createBrowserRouter([
         path: "/about",
         Component: AboutUs,
       },
-      // {
-      //   path: "/enrolledCourse",
-      //   element: (
-      //     <PrivateRoutes>
-      //       <EnrolledCourse></EnrolledCourse>
-      //     </PrivateRoutes>
-      //   ),
-
-      //   loader: () =>
-      //     fetch(
-      //       "https://online-learning-platform-server-tau.vercel.app/myEnroll",
-      //     ),
-      // },
-      {
-        path: "/addCourse",
-        element: (
-          <PrivateRoutes>
-            <AddCourses></AddCourses>
-          </PrivateRoutes>
-        ),
-      },
-      {
-        path: "/myCourse",
-        element: (
-          <PrivateRoutes>
-            <MyCourse></MyCourse>
-          </PrivateRoutes>
-        ),
-      },
       {
         path: "/courses/:id",
         element: (
@@ -102,6 +74,10 @@ const Routes = createBrowserRouter([
     Component: Dashboard,
     children: [
       {
+        index: true,
+        Component: DashboardHome,
+      },
+      {
         path: "enrolledCourse",
         element: (
           <PrivateRoutes>
@@ -113,6 +89,22 @@ const Routes = createBrowserRouter([
           fetch(
             "https://online-learning-platform-server-tau.vercel.app/myEnroll",
           ),
+      },
+      {
+        path: "addCourse",
+        element: (
+          <PrivateRoutes>
+            <AddCourses></AddCourses>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "myCourse",
+        element: (
+          <PrivateRoutes>
+            <MyCourse></MyCourse>
+          </PrivateRoutes>
+        ),
       },
     ],
   },
